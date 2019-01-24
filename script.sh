@@ -20,6 +20,7 @@ rm -r shortlist_temp
 
 # conversion process
 
+mkdir outputs
 while read item; do
   python3 generate.py "${item}" # process the shortcodes to latex
   pandoc outputs/${item}.md -f markdown -t latex --mathjax -o outputs/${item}.tex # post-process the rest of the document to latex
@@ -39,6 +40,7 @@ done < ../tree.txt
 cd ..
 latexmk --lualatex -jobname=static/docs/latex latex.tex
 cd hugotopdf
+rm -r outputs
 
 # open PDF
 
