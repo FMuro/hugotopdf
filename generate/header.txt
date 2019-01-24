@@ -1,0 +1,6 @@
+#!/bin/python3
+
+import shortcodes # parse shortcodes
+import sys # Parsing arguments of the script
+import os # create path
+

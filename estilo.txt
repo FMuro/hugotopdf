@@ -1,0 +1,24 @@
+\\[ cambiar por $$
+
+\\] cambiar por $$
+
+\\( cambiar por $
+
+\\) cambiar por $
+
+no terminar un shortcode justo después de una lista, por ejemplo, en lugar de
+
+* último
+{{% /end %}}
+
+escribir:
+
+* último
+
+{{% /end %}}
+
+No terminar fórmulas matemáticas con espacios antes de $ o $$, es decir:
+
+$y = f(x)$ bien
+
+$y = f(x) $ mal

@@ -1,0 +1,12 @@
+parser = shortcodes.Parser(start="{{%", end="%}}")
+
+archivo = sys.argv[1]
+
+ruta = '../content/'
+
+with open(str(ruta)+str(archivo)+'.md', 'r') as myfile:
+    data=parser.parse(myfile.read())
+    os.makedirs(os.path.dirname('outputs/'+str(archivo)+'.md'), exist_ok=True)
+    text_file = open('outputs/'+str(archivo)+'.md', "w")
+    text_file.write(data)
+    text_file.close()

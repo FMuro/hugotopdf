@@ -1,0 +1,7 @@
+@shortcodes.register("title", "/title")
+def handler(context, content, pargs, kwargs):
+    if "label" in kwargs:
+        return '\\Begin{title}\label{%s} %s \End{title}' % (kwargs["label"], content)
+    else:
+        return '\\Begin{title} %s \End{title}' % (content)
+
