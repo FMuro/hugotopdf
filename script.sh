@@ -29,6 +29,7 @@ while read item; do
   sed -i "s/\\\_/_/g" outputs/${item}.tex # replace \_ with _
   sed -i "s/\\\\{/\\{/g" outputs/${item}.tex # replace \\{ with \{
   sed -i "s/\\\\}/\\}/g" outputs/${item}.tex # replace \\} with \}
+  sed -i "s/\\\\#/\\#/g" outputs/${item}.tex # replace \\# with \#
   sed -i "s/−/-/g" outputs/${item}.tex # replace − with -
   sed -i "s/\\\!/\\!/g" outputs/${item}.tex # replace \\! with \!
   sed -i "s#\.\./\.\.#static#g" outputs/${item}.tex # fix images path
