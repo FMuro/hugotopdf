@@ -1,1 +1,1 @@
-Scripts to convert to PDF my Hugo generated online lecture notes
+Scripts to convert to PDF my Hugo generated online lecture notes. It uses the [shortcodes library](https://pypi.org/project/shortcodes/) by [dmulholland](https://darrenmulholland.com/docs/shortcodes/).
