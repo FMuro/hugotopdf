@@ -22,3 +22,5 @@ No terminar fórmulas matemáticas con espacios antes de $ o $$, es decir:
 $y = f(x)$ bien
 
 $y = f(x) $ mal
+
+PRUEBA
