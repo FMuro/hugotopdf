@@ -43,6 +43,10 @@ latexmk --lualatex -jobname=static/docs/latex latex.tex
 cd hugotopdf
 rm -r outputs
 
+# remove auxiliary files (everything except for the pdf)
+
+find ../static/docs -type f -name "latex.*" ! -name "latex.pdf" -delete
+
 # open PDF
 
 gio open ../static/docs/latex.pdf
