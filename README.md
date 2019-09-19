@@ -2,7 +2,7 @@ Scripts to convert to PDF my Hugo generated online lecture notes. It uses the [s
 
 The scripts work as follows:
 
-1. We place ourselves in the Hugo folder `.` and clone this repo. This folder must contain the following two extra files (see [this repo](https://gitlab.com/edarfoc/estalg) as an example):
+1. We place ourselves in the Hugo folder `.` and clone this repo. This folder must contain the following two extra files (see [this repo](https://gitlab.com/FMuro/estalg) as an example):
     * `tree.txt` a list of `.md` files in `contents/` to be converted to PDF, with path relative to that folder.
     * `latex.tex` a LaTeX file that will produce the PDF. For each `path-to-file/file.txt`in `tree.txt` include an `\input{hugotopdf/outputs/path-to-file/file.txt}`.
 2. `cd hugoto pdf`
