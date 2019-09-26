@@ -39,13 +39,9 @@ done < ../tree.txt
 # compile with latex
 
 cd ..
-latexmk --lualatex -jobname=static/docs/latex latex.tex
+latexmk -f --lualatex -jobname=static/docs/latex latex.tex
 cd hugotopdf
 rm -r outputs
-
-# remove auxiliary files (everything except for the pdf)
-
-find ../static/docs -type f -name "latex.*" ! -name "latex.pdf" -delete
 
 # open PDF
 
