@@ -32,6 +32,8 @@ while read item; do
   sed -i "s/\\\\#/\\#/g" outputs/${item}.tex # replace \\# with \#
   sed -i "s/−/-/g" outputs/${item}.tex # replace − with -
   sed -i "s/\\\!/\\!/g" outputs/${item}.tex # replace \\! with \!
+  sed -i "s/\\\;/\\;/g" outputs/${item}.tex # replace \\; with \;
+  sed -i "s/\\\,/\\,/g" outputs/${item}.tex # replace \\, with \,
   sed -i "s#\.\./\.\.#static#g" outputs/${item}.tex # fix images path
   sed -i "s#\.\.#static#g" outputs/${item}.tex
 done < ../tree.txt
