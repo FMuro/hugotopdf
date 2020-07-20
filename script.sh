@@ -23,7 +23,7 @@ rm -r shortlist_temp
 mkdir outputs
 while read item; do
   python3 generate.py "${item}" # process the shortcodes to latex
-  pandoc outputs/${item}.md -f markdown -t latex --mathjax -o outputs/${item}.tex # post-process the rest of the document to latex
+  pandoc outputs/${item}.md -f markdown -t latex -o outputs/${item}.tex # post-process the rest of the document to latex
   tail -n +2 "outputs/${item}.tex" > outputs/${item}.tmp # remove first line which contains leftovers from Hugo headers
   mv outputs/${item}.tmp outputs/${item}.tex
   sed -i "s/\\\_/_/g" outputs/${item}.tex # replace \_ with _
