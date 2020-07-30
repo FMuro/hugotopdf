@@ -2,7 +2,7 @@
 def handler(context, content, pargs, kwargs):
     if "name" in kwargs:
         if "label" in kwargs:
-            return '\\Begin{title}\\textrm{\\normalfont (%s)}\label{%s} %s \End{title}' % (kwargs["name"], kwargs["label"], content)
+            return '\\Begin{title}\label{%s}\\textrm{\\normalfont (%s)} %s \End{title}' % (kwargs["label"], kwargs["name"], content)
         else:
             return '\\Begin{title}\\textrm{\\normalfont (%s)} %s \End{title}' % (kwargs["name"], content)
     elif "label" in kwargs:

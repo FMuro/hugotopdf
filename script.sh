@@ -34,6 +34,9 @@ while read item; do
   sed -i "s/\\\!/\\!/g" outputs/${item}.tex # replace \\! with \!
   sed -i "s/\\\;/\\;/g" outputs/${item}.tex # replace \\; with \;
   sed -i "s/\\\,/\\,/g" outputs/${item}.tex # replace \\, with \,
+  sed -i "s/\.gif/\.png/g" outputs/${item}.tex # replace .gif with .png
+  sed -i "s/\(\\href{[^\#]*\#\)\([^}]*\)\(}\)/\\hyperref[\2]/g" outputs/${item}.tex # fix some cross references
+  sed -i "s/\(\\protect\\\hyperlink{\)\([^}]*\)\(}\)/\\hyperref[\2]/g" outputs/${item}.tex # fix other cross references
   sed -i "s#\.\./\.\.#static#g" outputs/${item}.tex # fix images path
   sed -i "s#\.\.#static#g" outputs/${item}.tex
 done < ../tree.txt

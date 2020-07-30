@@ -22,7 +22,7 @@ def handler(context, content, pargs, kwargs):
 def handler(context, content, pargs, kwargs):
     if "name" in kwargs:
         if "label" in kwargs:
-            return '\\Begin{example}\\textrm{\\normalfont (%s)}\label{%s} %s \End{example}' % (kwargs["name"], kwargs["label"], content)
+            return '\\Begin{example}\label{%s}\\textrm{\\normalfont (%s)} %s \End{example}' % (kwargs["label"], kwargs["name"], content)
         else:
             return '\\Begin{example}\\textrm{\\normalfont (%s)} %s \End{example}' % (kwargs["name"], content)
     elif "label" in kwargs:
@@ -69,7 +69,7 @@ def handler(context, content, pargs, kwargs):
 def handler(context, content, pargs, kwargs):
     if "name" in kwargs:
         if "label" in kwargs:
-            return '\\Begin{theorem}\\textrm{\\normalfont (%s)}\label{%s} %s \End{theorem}' % (kwargs["name"], kwargs["label"], content)
+            return '\\Begin{theorem}\label{%s}\\textrm{\\normalfont (%s)} %s \End{theorem}' % (kwargs["label"], kwargs["name"], content)
         else:
             return '\\Begin{theorem}\\textrm{\\normalfont (%s)} %s \End{theorem}' % (kwargs["name"], content)
     elif "label" in kwargs:
