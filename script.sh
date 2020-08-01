@@ -37,8 +37,8 @@ while read item; do
   sed -i "s/\.gif/\.png/g" outputs/${item}.tex # replace .gif with .png
   sed -i "s/\(\\href{[^\#]*\#\)\([^}]*\)\(}\)/\\hyperref[\2]/g" outputs/${item}.tex # fix some cross references
   sed -i "s/\(\\protect\\\hyperlink{\)\([^}]*\)\(}\)/\\hyperref[\2]/g" outputs/${item}.tex # fix other cross references
-  sed -i "s#\.\./\.\.#static#g" outputs/${item}.tex # fix images path
-  sed -i "s#\.\.#static#g" outputs/${item}.tex
+  sed -i "s#\(includegraphics.*\/\)\([^\.]*\.png\)#includegraphics{static\/images\/\2#g" outputs/${item}.tex # fix PNG images path
+  sed -i "s#\(includegraphics.*\/\)\([^\.]*\)\(\.svg\)#includegraphics{pics\/tikz\/\2\.pdf#g" outputs/${item}.tex # fix SVG path
 done < ../tree.txt
 
 # compile with latex
